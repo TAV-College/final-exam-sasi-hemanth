@@ -1,44 +1,44 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
-import { ExternalLink } from './ExternalLink';
-import { MonoText } from './StyledText';
-import { Text, View } from './Themed';
+import { ExternalLink } from './ExternalLink'; // Make sure these components exist
+import { MonoText } from './StyledText'; // Make sure these components exist
+import { Text, View } from './Themed'; // Make sure these components exist
 
-import Colors from '@/constants/Colors';
+import Colors from 'constants/Colors';
 
 export default function EditScreenInfo({ path }: { path: string }) {
   return (
     <View>
-      <View style={styles.getStartedContainer}>
+      <View style={styles.infoContainer}>
         <Text
-          style={styles.getStartedText}
+          style={styles.infoText}
           lightColor="rgba(0,0,0,0.8)"
           darkColor="rgba(255,255,255,0.8)">
-          Open up the code for this screen:
+          Here you can see the details of the current screen or feature.
         </Text>
 
         <View
-          style={[styles.codeHighlightContainer, styles.homeScreenFilename]}
+          style={[styles.codeHighlightContainer, styles.pathContainer]}
           darkColor="rgba(255,255,255,0.05)"
           lightColor="rgba(0,0,0,0.05)">
           <MonoText>{path}</MonoText>
         </View>
 
         <Text
-          style={styles.getStartedText}
+          style={styles.infoText}
           lightColor="rgba(0,0,0,0.8)"
           darkColor="rgba(255,255,255,0.8)">
-          Change any of the text, save the file, and your app will automatically update.
+          Explore more features or visit our documentation.
         </Text>
       </View>
 
       <View style={styles.helpContainer}>
         <ExternalLink
           style={styles.helpLink}
-          href="https://docs.expo.io/get-started/create-a-new-app/#opening-the-app-on-your-phonetablet">
+          href="https://your-project-docs-link.com">
           <Text style={styles.helpLinkText} lightColor={Colors.light.tint}>
-            Tap here if your app doesn't automatically update after making changes
+            Learn more about this feature
           </Text>
         </ExternalLink>
       </View>
@@ -47,18 +47,18 @@ export default function EditScreenInfo({ path }: { path: string }) {
 }
 
 const styles = StyleSheet.create({
-  getStartedContainer: {
+  infoContainer: {
     alignItems: 'center',
     marginHorizontal: 50,
   },
-  homeScreenFilename: {
+  pathContainer: {
     marginVertical: 7,
   },
   codeHighlightContainer: {
     borderRadius: 3,
     paddingHorizontal: 4,
   },
-  getStartedText: {
+  infoText: {
     fontSize: 17,
     lineHeight: 24,
     textAlign: 'center',
